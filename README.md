@@ -22,7 +22,7 @@ pod 'LRWebView'
 
 ## Author
 
-huawt, huawentao@vipkid.com.cn
+huawt, ghost263sky@163.com
 
 ## License
 
