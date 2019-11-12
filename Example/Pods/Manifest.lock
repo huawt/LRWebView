@@ -1,0 +1,23 @@
+PODS:
+  - KKJSBridge (1.0.9)
+  - LRWebView (1.0.0):
+    - KKJSBridge
+
+DEPENDENCIES:
+  - LRWebView (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - KKJSBridge
+
+EXTERNAL SOURCES:
+  LRWebView:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  KKJSBridge: 316ee4fc9a39342bcb05347df7797e3485c3e4b3
+  LRWebView: c59681a2546e675bfeb342ee4f7c089cbba9cfdc
+
+PODFILE CHECKSUM: 0528c5d3ad9007ede285d5ae498c00b39df52b46
+
+COCOAPODS: 1.8.4

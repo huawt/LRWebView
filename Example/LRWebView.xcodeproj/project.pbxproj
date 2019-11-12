@@ -39,8 +39,8 @@
 /* Begin PBXFileReference section */
 		149BE1A742BF7609E77063E4 /* Pods-LRWebView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LRWebView_Tests.debug.xcconfig"; path = "Target Support Files/Pods-LRWebView_Tests/Pods-LRWebView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		15B57A103FC1F78D17924B61 /* Pods_LRWebView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LRWebView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		1A102E1094A98B0295E87386 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		2194EE8631E09A44B474C9A2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		1A102E1094A98B0295E87386 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		2194EE8631E09A44B474C9A2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		25BF23B054AFF2873078DE91 /* Pods-LRWebView_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LRWebView_Example.release.xcconfig"; path = "Target Support Files/Pods-LRWebView_Example/Pods-LRWebView_Example.release.xcconfig"; sourceTree = "<group>"; };
 		299CD27ACAE27A97D5CB1C49 /* Pods_LRWebView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LRWebView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5245733AA7AC59A36FEA8A53 /* Pods-LRWebView_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LRWebView_Tests.release.xcconfig"; path = "Target Support Files/Pods-LRWebView_Tests/Pods-LRWebView_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9016A85C06A938CBD39CAF6E /* Pods-LRWebView_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LRWebView_Example.debug.xcconfig"; path = "Target Support Files/Pods-LRWebView_Example/Pods-LRWebView_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		9140F8658ED83F25957B7002 /* LRWebView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = LRWebView.podspec; path = ../LRWebView.podspec; sourceTree = "<group>"; };
+		9140F8658ED83F25957B7002 /* LRWebView.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LRWebView.podspec; path = ../LRWebView.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,7 +193,6 @@
 				149BE1A742BF7609E77063E4 /* Pods-LRWebView_Tests.debug.xcconfig */,
 				5245733AA7AC59A36FEA8A53 /* Pods-LRWebView_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -258,6 +257,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -346,10 +346,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LRWebView_Example/Pods-LRWebView_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/KKJSBridge/KKJSBridge.framework",
 				"${BUILT_PRODUCTS_DIR}/LRWebView/LRWebView.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KKJSBridge.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LRWebView.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

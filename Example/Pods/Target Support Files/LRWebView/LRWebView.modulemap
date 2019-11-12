@@ -1,0 +1,6 @@
+framework module LRWebView {
+  umbrella header "LRWebView-umbrella.h"
+
+  export *
+  module * { export * }
+}
