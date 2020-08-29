@@ -1,6 +1,6 @@
 
 
-#import "KKWebView.h"
+#import <KKJSBridge/KKJSBridge.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
