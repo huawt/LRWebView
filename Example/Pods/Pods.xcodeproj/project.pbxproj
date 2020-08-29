@@ -59,7 +59,6 @@
 		3C5D5D6EA135D780CEC90969B0843B9C /* KKJSBridgeFormDataFile.h in Headers */ = {isa = PBXBuildFile; fileRef = 395EEB6CF1045E17E946AC2EB70CB3B6 /* KKJSBridgeFormDataFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3D6E33890AE104B3520E34C9E9CF5EF4 /* WaterMarkWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 989CE88DD4B744AD64448392BB3377C3 /* WaterMarkWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3F2B57E50D8847085BB7BF1B2E6030BC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E7C5B98F33D8DD78514F6918785031 /* CoreGraphics.framework */; };
-		3FDF0859995F5B6E45CF675FA0BC5F13 /* LRWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = D26317D0C6085213F8D0B29324B5E27B /* LRWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		40F3BB8E62504CC1A279C22D6537FA07 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9B0D0792D3E5405DD3D72A2BFA26A3B /* MobileCoreServices.framework */; };
 		43AFC84529F9D033E3B4B75919E7224F /* KKJSBridgeLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6AE112004FF014B38CF990D421E018 /* KKJSBridgeLogger.m */; };
 		4414CA8F280FC6E6AABB7F5CF7718D7D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CFCE4749092BE138E8DA8D062200259 /* QuartzCore.framework */; };
@@ -100,7 +99,6 @@
 		6F85FA8D394C1FBD8FB24C5B5F7D7FE2 /* KKJSBridgeLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = C9C053F62EB90637B3323FE88F2A4EB4 /* KKJSBridgeLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7041AD6D3346AD18899CDA47FA9D2A6D /* KKJSBridgeMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A1BE69F0BF75A0FA0BA0337FAF153AD /* KKJSBridgeMessage.m */; };
 		72713845439F7FE4716B0AA99E8F30D9 /* WaterMarkWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 20B0B869EC8247A395A5CB4EA53601D7 /* WaterMarkWebView.m */; };
-		73806A23CEF8634FD5186E81E4EB307F /* LRWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 164F90E2854990D846693ACC6126C706 /* LRWebView.m */; };
 		78D18A8950821DCA8F5689CA17C3F748 /* KKJSBridgeMessageDispatcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 795037AA495DC293823F0865F65C379D /* KKJSBridgeMessageDispatcher.m */; };
 		7AD4258D23E8C600EEE1F434A555B174 /* MASLayoutConstraint.h in Headers */ = {isa = PBXBuildFile; fileRef = 9145A2BF112C1F456D50ABD5028AC7D3 /* MASLayoutConstraint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7DB90B1A48E821A864D809099484395D /* LAWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E69C3CD6559593F586AB70A4F8F2A77 /* LAWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -320,21 +318,20 @@
 		0F12BACDBE53F4C0F416B84682959BC9 /* LRTools-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "LRTools-prefix.pch"; sourceTree = "<group>"; };
 		0F79126A53A34AF1C57A568E0FA8C51C /* LAPPWKDefine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LAPPWKDefine.h; path = LRWebView/Classes/LAPPWKDefine.h; sourceTree = "<group>"; };
 		11029E1C0C92DDDEDB91AC10A56BCCF0 /* KKJSBridgeWeakScriptMessageDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KKJSBridgeWeakScriptMessageDelegate.h; path = KKJSBridge/KKJSBridge/Util/KKJSBridgeWeakScriptMessageDelegate.h; sourceTree = "<group>"; };
-		12080958EF3D8D2FC358C7FC870128C4 /* LRWebView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LRWebView.framework; path = LRWebView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		14BA6764C25AEF5DB32330E3B845771F /* Pods_LRWebView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LRWebView_Example.framework; path = "Pods-LRWebView_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		12080958EF3D8D2FC358C7FC870128C4 /* LRWebView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LRWebView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		14BA6764C25AEF5DB32330E3B845771F /* Pods_LRWebView_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LRWebView_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EC3FD186CC92DA1FCE842709F1164F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
 		156B91BF6F2358AEC2E58A52D1A49FE0 /* LRWebView-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "LRWebView-Info.plist"; sourceTree = "<group>"; };
 		15BAC860A23BDB6EEB9DB5066C0DAB8A /* WKWebView+KKWebViewReusable.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "WKWebView+KKWebViewReusable.m"; path = "KKJSBridge/KKJSBridge/View/WebViewPool/WKWebView+KKWebViewReusable.m"; sourceTree = "<group>"; };
 		15ECDCAF42B5711760F43D52552A5F24 /* MASConstraintMaker.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = MASConstraintMaker.m; path = Masonry/MASConstraintMaker.m; sourceTree = "<group>"; };
-		164F90E2854990D846693ACC6126C706 /* LRWebView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LRWebView.m; path = LRWebView/Classes/LRWebView.m; sourceTree = "<group>"; };
 		18DC4CB010ED234AC68028CD43B27674 /* Masonry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Masonry.debug.xcconfig; sourceTree = "<group>"; };
-		1A8302E9E3D2593471C6260E13F199D1 /* KKJSBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = KKJSBridge.framework; path = KKJSBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A8302E9E3D2593471C6260E13F199D1 /* KKJSBridge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = KKJSBridge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CD4389705C512C569A59A955B20FB94 /* KKJSBridgeAjaxDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KKJSBridgeAjaxDelegate.h; path = KKJSBridge/KKJSBridge/Modules/Ajax/KKJSBridgeAjaxDelegate.h; sourceTree = "<group>"; };
 		1D064A424CD7DE1FDAC39D28F3CC2B3F /* ViewController+MASAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "ViewController+MASAdditions.m"; path = "Masonry/ViewController+MASAdditions.m"; sourceTree = "<group>"; };
 		1D7D4770D65F4BCD89E96DAA833D7AE1 /* TLWaterMark-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TLWaterMark-dummy.m"; sourceTree = "<group>"; };
 		1D98B3FD1EECF8E6DAA99B0DF408A8DC /* KKJSBridge-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "KKJSBridge-prefix.pch"; sourceTree = "<group>"; };
 		1F074E0DA372DE25712A8A6129DFC8BB /* TLToastHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TLToastHUD.h; path = TLToastHUD/Classes/TLToastHUD.h; sourceTree = "<group>"; };
-		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Masonry.framework; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1FFED36A657123030ABB700256D73F15 /* Masonry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Masonry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		20B0B869EC8247A395A5CB4EA53601D7 /* WaterMarkWebView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = WaterMarkWebView.m; path = TLWaterMark/Classes/WaterMarkWebView.m; sourceTree = "<group>"; };
 		22C977CD11EDABC6E10D6F47A7FC4F87 /* Pods-LRWebView_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-LRWebView_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		230A070822336470589D0DD53812B1E8 /* TLToastHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TLToastHUD-prefix.pch"; sourceTree = "<group>"; };
@@ -348,7 +345,7 @@
 		2DF8BF1A9795A68027D660EC919772B7 /* TLProcessHUD.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TLProcessHUD.m; path = TLToastHUD/Classes/TLProcessHUD.m; sourceTree = "<group>"; };
 		2FAD6CCAEE564C4C84C506D5A4DE0780 /* KKWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KKWebView.h; path = KKJSBridge/KKJSBridge/View/KKWebView.h; sourceTree = "<group>"; };
 		35E3C986594F5D44777CFD2D68B59F46 /* KKWebViewPool.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KKWebViewPool.m; path = KKJSBridge/KKJSBridge/View/WebViewPool/KKWebViewPool.m; sourceTree = "<group>"; };
-		37BCC14B2A4826927C6CBE9FCF117254 /* KKJSBridge.js */ = {isa = PBXFileReference; includeInIndex = 1; name = KKJSBridge.js; path = KKJSBridge/KKJSBridge/JS/KKJSBridge.js; sourceTree = "<group>"; };
+		37BCC14B2A4826927C6CBE9FCF117254 /* KKJSBridge.js */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.javascript; name = KKJSBridge.js; path = KKJSBridge/KKJSBridge/JS/KKJSBridge.js; sourceTree = "<group>"; };
 		381534880EBDD014FBE6D0BEF517593A /* TLToastHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TLToastHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C50106BEFE3A27F6B62D3A9DD45B57 /* WaterMarkCollectionView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WaterMarkCollectionView.h; path = TLWaterMark/Classes/WaterMarkCollectionView.h; sourceTree = "<group>"; };
 		38DCC9C425B360E074222BD2326DBCAC /* Pods-LRWebView_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-LRWebView_Example.modulemap"; sourceTree = "<group>"; };
@@ -360,7 +357,7 @@
 		3FF5C7A96F5D3DC64DC0C41E2E5C61DC /* KKJSBridgeXMLHttpRequest.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KKJSBridgeXMLHttpRequest.h; path = KKJSBridge/KKJSBridge/Modules/Ajax/OldAjax/KKJSBridgeXMLHttpRequest.h; sourceTree = "<group>"; };
 		3FF77D292A356A5D92CC3B4CF652A573 /* LAPPAlertController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LAPPAlertController.h; path = LRWebView/Classes/LAPPAlertController.h; sourceTree = "<group>"; };
 		412BC17F7E70B35CED1960CDE43A4025 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/WebKit.framework; sourceTree = DEVELOPER_DIR; };
-		42AFE33657F2DF6C55BA1318B91FAC74 /* TLWaterMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TLWaterMark.framework; path = TLWaterMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		42AFE33657F2DF6C55BA1318B91FAC74 /* TLWaterMark.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TLWaterMark.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		43A91168F73B061154826CEC5FDEF375 /* LAJSCallPhone.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LAJSCallPhone.h; path = LRWebView/Classes/LAJSCallPhone.h; sourceTree = "<group>"; };
 		44B1920067A4E0E58ED7082020AC9F35 /* KKJSBridgeAjaxURLProtocol.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KKJSBridgeAjaxURLProtocol.h; path = KKJSBridge/KKJSBridge/Modules/Ajax/URLProtocol/KKJSBridgeAjaxURLProtocol.h; sourceTree = "<group>"; };
 		45058066498C52CB7C13A7203F0EEB2A /* TLToastHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "TLToastHUD-dummy.m"; sourceTree = "<group>"; };
@@ -383,13 +380,13 @@
 		5B401D843460E71B13F4DF393BC02175 /* LRTools.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LRTools.release.xcconfig; sourceTree = "<group>"; };
 		5E69C3CD6559593F586AB70A4F8F2A77 /* LAWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LAWebView.h; path = LRWebView/Classes/LAWebView.h; sourceTree = "<group>"; };
 		5FE16B0B49F0EA81A41EBD59B9C0D084 /* WKWebView+KKWebViewReusable.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "WKWebView+KKWebViewReusable.h"; path = "KKJSBridge/KKJSBridge/View/WebViewPool/WKWebView+KKWebViewReusable.h"; sourceTree = "<group>"; };
-		60CBAA1DF4EF81A2A00AE2FB26BF01B0 /* Pods_LRWebView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_LRWebView_Tests.framework; path = "Pods-LRWebView_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		60CBAA1DF4EF81A2A00AE2FB26BF01B0 /* Pods_LRWebView_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LRWebView_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6117A356590920C5348D354D8AB65ACF /* KKJSBridgeXMLBodyCacheRequest.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KKJSBridgeXMLBodyCacheRequest.m; path = KKJSBridge/KKJSBridge/Modules/Ajax/KKJSBridgeXMLBodyCacheRequest.m; sourceTree = "<group>"; };
 		614A72953EC8649E1E7C69483185152C /* KKJSBridge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KKJSBridge.release.xcconfig; sourceTree = "<group>"; };
 		61F369ECA66B93402B438763A5FEB642 /* LAJSGetDeviceMessage.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LAJSGetDeviceMessage.m; path = LRWebView/Classes/LAJSGetDeviceMessage.m; sourceTree = "<group>"; };
 		6202D3D2190B768324CC9D052313A18F /* Pods-LRWebView_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LRWebView_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		625440DD0A98580CE3F95A20CF4A8E53 /* LAWebView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LAWebView.m; path = LRWebView/Classes/LAWebView.m; sourceTree = "<group>"; };
-		62D0F39144199249B6D3FEFA1B91CBEF /* LRTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = LRTools.framework; path = LRTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62D0F39144199249B6D3FEFA1B91CBEF /* LRTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LRTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		633869406F0C980F65265E9C0C0ACCA2 /* Pods-LRWebView_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LRWebView_Tests-umbrella.h"; sourceTree = "<group>"; };
 		63528A948507A7689BC7F8F01D234956 /* KKJSBridgeStreamingMultipartFormData.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KKJSBridgeStreamingMultipartFormData.m; path = KKJSBridge/KKJSBridge/Modules/Ajax/FormData/KKJSBridgeStreamingMultipartFormData.m; sourceTree = "<group>"; };
 		637DDE5B16C77E96B5DCA736B36A987B /* UIView+WaterMark.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+WaterMark.h"; path = "TLWaterMark/Classes/UIView+WaterMark.h"; sourceTree = "<group>"; };
@@ -404,7 +401,7 @@
 		6AF54781E9000C8E7BFF1A4013A70B53 /* TLWaterMark-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "TLWaterMark-umbrella.h"; sourceTree = "<group>"; };
 		6B100BBBD49E71F8DC822A46CF2B1681 /* UIButton+Vertical.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIButton+Vertical.h"; path = "LRTools/Classes/UIButton+Vertical.h"; sourceTree = "<group>"; };
 		6C94340718124FDFAD94AE40680721F5 /* KKJSBridgeEngine.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KKJSBridgeEngine.m; path = KKJSBridge/KKJSBridge/KKJSBridgeEngine.m; sourceTree = "<group>"; };
-		6E337DBDA319FB5EFE6C5C83F98D2524 /* LRWebView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = LRWebView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		6E337DBDA319FB5EFE6C5C83F98D2524 /* LRWebView.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = LRWebView.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6EBE8697A5AE97FE57570E6EDAD0E425 /* WaterMarkTableView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = WaterMarkTableView.h; path = TLWaterMark/Classes/WaterMarkTableView.h; sourceTree = "<group>"; };
 		6F2127E4724C7C8E943779A129532DFF /* KKJSBridgeEngine.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KKJSBridgeEngine.h; path = KKJSBridge/KKJSBridge/KKJSBridgeEngine.h; sourceTree = "<group>"; };
 		714DC04F8CE759CE6744B2E27B3C9526 /* MASViewAttribute.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = MASViewAttribute.h; path = Masonry/MASViewAttribute.h; sourceTree = "<group>"; };
@@ -442,7 +439,7 @@
 		9B89E661A8849D905D4EAC7F217091FE /* Pods-LRWebView_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-LRWebView_Example-frameworks.sh"; sourceTree = "<group>"; };
 		9C1EB2534ABB619B0A9645902F67B00B /* LAJSSetTitle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LAJSSetTitle.h; path = LRWebView/Classes/LAJSSetTitle.h; sourceTree = "<group>"; };
 		9C50BDB0C4ACF5F24869B3263EF3BC45 /* NSArray+MASAdditions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+MASAdditions.h"; path = "Masonry/NSArray+MASAdditions.h"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9DBECA2605B0581AFE88EDAF50E86142 /* LRWebView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = LRWebView.release.xcconfig; sourceTree = "<group>"; };
 		A13CAC753D75364A0DC11BEB90B4095C /* LRTools.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRTools.h; path = LRTools/Classes/LRTools.h; sourceTree = "<group>"; };
 		A1E537CEDF04FC2FCEFEFADCE8D7778A /* TLAlertView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TLAlertView.h; path = TLToastHUD/Classes/TLAlertView.h; sourceTree = "<group>"; };
@@ -487,15 +484,14 @@
 		C9B0D0792D3E5405DD3D72A2BFA26A3B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		C9C053F62EB90637B3323FE88F2A4EB4 /* KKJSBridgeLogger.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KKJSBridgeLogger.h; path = KKJSBridge/KKJSBridge/Util/KKJSBridgeLogger.h; sourceTree = "<group>"; };
 		C9E35531653B4606D2A9DDA94444AD15 /* LAPPAlertController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = LAPPAlertController.m; path = LRWebView/Classes/LAPPAlertController.m; sourceTree = "<group>"; };
-		CB0D3EAE74AEC0DDF940FFC76F0D6A58 /* TLToastHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = TLToastHUD.framework; path = TLToastHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CB0D3EAE74AEC0DDF940FFC76F0D6A58 /* TLToastHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TLToastHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB665823571F68162C8442BA6105D0AF /* Pods-LRWebView_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-LRWebView_Example-umbrella.h"; sourceTree = "<group>"; };
 		CDE624BD96C462B77A3B33934C44541C /* Pods-LRWebView_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LRWebView_Tests-Info.plist"; sourceTree = "<group>"; };
 		CE0FE197A50A328DF321C7CDD7DA8D8D /* Pods-LRWebView_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-LRWebView_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		D0244D55832CABBAE6B65B4505345D4B /* KKJSBridgeStreamingMultipartFormData.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KKJSBridgeStreamingMultipartFormData.h; path = KKJSBridge/KKJSBridge/Modules/Ajax/FormData/KKJSBridgeStreamingMultipartFormData.h; sourceTree = "<group>"; };
 		D0922BF91E4C3458D7E465392C3F2049 /* LAPPWKKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LAPPWKKit.h; path = LRWebView/Classes/LAPPWKKit.h; sourceTree = "<group>"; };
-		D26317D0C6085213F8D0B29324B5E27B /* LRWebView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LRWebView.h; path = LRWebView/Classes/LRWebView.h; sourceTree = "<group>"; };
 		D26A3B721F8C40AA95BA12E51C532F16 /* LAJSGetDeviceMessage.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = LAJSGetDeviceMessage.h; path = LRWebView/Classes/LAJSGetDeviceMessage.h; sourceTree = "<group>"; };
-		D2AC4F9EC67C7547CD711C119104F6A2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		D2AC4F9EC67C7547CD711C119104F6A2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		D2CFF0331564ECE0EB1225CD8626F6B4 /* NSLayoutConstraint+MASDebugAdditions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+MASDebugAdditions.m"; path = "Masonry/NSLayoutConstraint+MASDebugAdditions.m"; sourceTree = "<group>"; };
 		D4F287F41B55551BEE35D63235F5B1E1 /* KKJSBridgeModuleCookie.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = KKJSBridgeModuleCookie.m; path = KKJSBridge/KKJSBridge/Modules/Cookie/KKJSBridgeModuleCookie.m; sourceTree = "<group>"; };
 		D6EE48C66E2AD4316934431811610BAB /* KKJSBridge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = KKJSBridge.debug.xcconfig; sourceTree = "<group>"; };
@@ -509,7 +505,7 @@
 		E0EDC788919BC1938850EE571ED26FF1 /* LRWebView-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "LRWebView-dummy.m"; sourceTree = "<group>"; };
 		E0FA63F2904CB257842FA2DDE2B2F5DC /* TLToastHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TLToastHUD.debug.xcconfig; sourceTree = "<group>"; };
 		E1CA8ED416DD778A1824A642FD6556EA /* TLWaterMark-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "TLWaterMark-Info.plist"; sourceTree = "<group>"; };
-		E1D85A5EF73345C3A5D1FE76F1196094 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		E1D85A5EF73345C3A5D1FE76F1196094 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E26208E862D4BF0B849D48FAB2299CB3 /* UIViewController+AlertPresented.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AlertPresented.m"; path = "LRTools/Classes/UIViewController+AlertPresented.m"; sourceTree = "<group>"; };
 		E3EB429725365F5D5C137C89195DBD0E /* TLToastHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = TLToastHUD.release.xcconfig; sourceTree = "<group>"; };
 		E440BB0B7813F41C34D3C2101BB556C7 /* KKJSBridgeModuleMetaClass.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = KKJSBridgeModuleMetaClass.h; path = KKJSBridge/KKJSBridge/Register/KKJSBridgeModuleMetaClass.h; sourceTree = "<group>"; };
@@ -708,7 +704,6 @@
 				20B0B869EC8247A395A5CB4EA53601D7 /* WaterMarkWebView.m */,
 				60A6CFEDE1D4464C61D9F3F71D665A8E /* Support Files */,
 			);
-			name = TLWaterMark;
 			path = TLWaterMark;
 			sourceTree = "<group>";
 		};
@@ -804,8 +799,6 @@
 				940824A373A21CE76ECED430FA94C6EB /* LAPPWKViewModel.m */,
 				5E69C3CD6559593F586AB70A4F8F2A77 /* LAWebView.h */,
 				625440DD0A98580CE3F95A20CF4A8E53 /* LAWebView.m */,
-				D26317D0C6085213F8D0B29324B5E27B /* LRWebView.h */,
-				164F90E2854990D846693ACC6126C706 /* LRWebView.m */,
 				89BF592FD96A0D075855A8A5D55795D0 /* WKWebView+LongPress.h */,
 				C430622B62D039FDBAC098E82888C0CE /* WKWebView+LongPress.m */,
 				B0378091386D2B8957D6C24B737CE73C /* Pod */,
@@ -900,7 +893,6 @@
 				4E3184BCE77504D87EAB295A10D41F64 /* Resources */,
 				6B347CB22FD0867676D826BA0A4E1DCF /* Support Files */,
 			);
-			name = KKJSBridge;
 			path = KKJSBridge;
 			sourceTree = "<group>";
 		};
@@ -919,7 +911,6 @@
 				81CE3E779745831989B87615B3B6B881 /* UIViewController+DismissKeyboard.m */,
 				20A182FCDF44DCC94799D60C2AF41D4B /* Support Files */,
 			);
-			name = LRTools;
 			path = LRTools;
 			sourceTree = "<group>";
 		};
@@ -978,7 +969,6 @@
 				A2496C578900E33D405D97FA8B40FFA0 /* TLToastHUDEngine.m */,
 				25573B2995874C4832B198E3E2AC5EAD /* Support Files */,
 			);
-			name = TLToastHUD;
 			path = TLToastHUD;
 			sourceTree = "<group>";
 		};
@@ -1012,7 +1002,6 @@
 				1D064A424CD7DE1FDAC39D28F3CC2B3F /* ViewController+MASAdditions.m */,
 				74C1812FB6E9115CB0EDD2FB0F26B7B6 /* Support Files */,
 			);
-			name = Masonry;
 			path = Masonry;
 			sourceTree = "<group>";
 		};
@@ -1124,7 +1113,6 @@
 				F039324F770202F5877035094A3EAA32 /* LAPPWKViewModel.h in Headers */,
 				7DB90B1A48E821A864D809099484395D /* LAWebView.h in Headers */,
 				CACCB294CE945B2A68F1D611D99282CE /* LRWebView-umbrella.h in Headers */,
-				3FDF0859995F5B6E45CF675FA0BC5F13 /* LRWebView.h in Headers */,
 				115BB0A4E0A94F68A95D4EAA5ACE7917 /* WKWebView+LongPress.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1600,7 +1588,6 @@
 				FA1EAB4F930B33ED536CDFA6AE22DF2C /* LAPPWKViewModel.m in Sources */,
 				D6F8A9BF66AB124791028C4483F1F2B8 /* LAWebView.m in Sources */,
 				ECDF969D5242CB8308B2E7C336B80666 /* LRWebView-dummy.m in Sources */,
-				73806A23CEF8634FD5186E81E4EB307F /* LRWebView.m in Sources */,
 				65E4662313410961095BD60CC115C4FA /* WKWebView+LongPress.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1875,8 +1862,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
