@@ -11,8 +11,8 @@ NSString* const JSGetHTMLById =
 @"function JSGetHTMLById(id) {\
 return document.getElementById(id).innerHTML;\
 }";
-
-/** 获取链接的js方法 */  //目前只用到这个JS
+ 
+/** 获取链接的js方法 */  //目前只用到该方法
 NSString* const JSSearchHrefFromHtml =
 @"function JSSearchHref(x,y) {\
 var e = document.elementFromPoint(x, y);\
@@ -170,7 +170,7 @@ return false;\
 typedef void(^LongPressedImageBlock)(NSString *imageUrl);
 static LongPressedImageBlock pressedImageBlock = nil;
 
-@implementation LRWebView (LongPress)
+@implementation LAWebView (LongPress)
 
 CGPoint touchPoint;
 

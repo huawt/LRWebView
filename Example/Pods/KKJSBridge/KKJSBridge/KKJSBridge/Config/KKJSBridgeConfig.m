@@ -9,6 +9,9 @@
 #import "KKJSBridgeConfig.h"
 #import "KKJSBridgeJSExecutor.h"
 #import "KKJSBridgeEngine.h"
+#import "NSURLProtocol+KKJSBridgeWKWebView.h"
+
+static id<KKJSBridgeAjaxDelegateManager> globalAjaxDelegateManager;
 
 @interface KKJSBridgeConfig()
 
@@ -29,8 +32,29 @@
 - (void)setEnableAjaxHook:(BOOL)enableAjaxHook {
     _enableAjaxHook = enableAjaxHook;
     
-    WKUserScript *userScript = [[WKUserScript alloc] initWithSource:[NSString stringWithFormat:@"window.KKJSBridgeConfig.enableAjaxHook(%@)", [NSNumber numberWithBool:enableAjaxHook]] injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
-    [self.engine.webView.configuration.userContentController addUserScript:userScript];
+    if (enableAjaxHook) {
+        [NSURLProtocol KKJSBridgeRegisterScheme:@"https"];
+        [NSURLProtocol KKJSBridgeRegisterScheme:@"http"];
+    } else {
+        [NSURLProtocol KKJSBridgeUnregisterScheme:@"https"];
+        [NSURLProtocol KKJSBridgeUnregisterScheme:@"http"];
+    }
+    
+    NSString *script = [NSString stringWithFormat:@"window.KKJSBridgeConfig.enableAjaxHook(%@)", [NSNumber numberWithBool:enableAjaxHook]];
+    if (self.engine.isBridgeReady) {
+        [KKJSBridgeJSExecutor evaluateJavaScript:script inWebView:self.engine.webView completionHandler:nil];
+    } else {
+        WKUserScript *userScript = [[WKUserScript alloc] initWithSource:script injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
+        [self.engine.webView.configuration.userContentController addUserScript:userScript];
+    }
+}
+
++ (void)setAjaxDelegateManager:(id<KKJSBridgeAjaxDelegateManager>)ajaxDelegateManager {
+    globalAjaxDelegateManager = ajaxDelegateManager;
+}
+
++ (id<KKJSBridgeAjaxDelegateManager>)ajaxDelegateManager {
+    return globalAjaxDelegateManager;
 }
 
 @end

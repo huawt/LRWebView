@@ -1,7 +1,16 @@
 PODS:
-  - KKJSBridge (1.0.9)
-  - LRWebView (1.0.0):
+  - KKJSBridge (1.1.5)
+  - LRTools (1.0.6)
+  - LRWebView (1.0.1):
     - KKJSBridge
+    - LRTools
+    - Masonry
+    - TLToastHUD
+    - TLWaterMark
+  - Masonry (1.1.0)
+  - TLToastHUD (1.0.1):
+    - Masonry
+  - TLWaterMark (1.0.7)
 
 DEPENDENCIES:
   - LRWebView (from `../`)
@@ -9,15 +18,23 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - KKJSBridge
+    - LRTools
+    - Masonry
+    - TLToastHUD
+    - TLWaterMark
 
 EXTERNAL SOURCES:
   LRWebView:
     :path: "../"
 
 SPEC CHECKSUMS:
-  KKJSBridge: 316ee4fc9a39342bcb05347df7797e3485c3e4b3
-  LRWebView: c59681a2546e675bfeb342ee4f7c089cbba9cfdc
+  KKJSBridge: fc41c801de7cdf6379aee4033c0d851dd50a930b
+  LRTools: 8721c8f060b76f126f20a73e71b93a5c1c40c8b1
+  LRWebView: 5ba6370d073f2f4efd6bb63a4b98574c8be30a34
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  TLToastHUD: fb41f37be2182f471bbfe697b9cf4bb2a7c1057f
+  TLWaterMark: f4f6ad5196f3586ec0cb8770a2cc3eae82de2d7c
 
 PODFILE CHECKSUM: 0528c5d3ad9007ede285d5ae498c00b39df52b46
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

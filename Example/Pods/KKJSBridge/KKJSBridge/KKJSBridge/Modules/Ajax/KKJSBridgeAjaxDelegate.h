@@ -10,6 +10,7 @@
 #define KKJSBridgeAjaxDelegate_h
 #import <Foundation/Foundation.h>
 
+NS_ASSUME_NONNULL_BEGIN
 @class KKJSBridgeXMLHttpRequest;
 
 /**
@@ -17,11 +18,10 @@
  */
 @protocol KKJSBridgeAjaxDelegate <NSObject>
 
-@optional
-- (void)JSBridgeAjaxInProcessing:(id<KKJSBridgeAjaxDelegate>)ajax;
-
 @required
-- (void)JSBridgeAjaxDidCompletion:(id<KKJSBridgeAjaxDelegate>)ajax response:(NSURLResponse *)response responseObject:(id _Nullable)responseObject error:(NSError * _Nullable)error;
+- (void)JSBridgeAjax:(id<KKJSBridgeAjaxDelegate>)ajax didReceiveResponse:(NSURLResponse *)response;
+- (void)JSBridgeAjax:(id<KKJSBridgeAjaxDelegate>)ajax didReceiveData:(NSData *)data;
+- (void)JSBridgeAjax:(id<KKJSBridgeAjaxDelegate>)ajax didCompleteWithError:(NSError * _Nullable)error;
 
 @end
 
@@ -34,5 +34,5 @@
 
 @end
 
-
+NS_ASSUME_NONNULL_END
 #endif /* KKJSBridgeAjaxDelegate_h */

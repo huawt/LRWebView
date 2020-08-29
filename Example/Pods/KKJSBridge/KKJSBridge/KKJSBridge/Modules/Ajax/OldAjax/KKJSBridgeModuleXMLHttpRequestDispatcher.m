@@ -10,6 +10,7 @@
 #import "KKJSBridgeXMLHttpRequest.h"
 #import "KKJSBridgeModuleRegister.h"
 #import "KKJSBridgeEngine.h"
+#import "KKJSBridgeFormDataFile.h"
 
 @interface KKJSBridgeModuleXMLHttpRequestDispatcher()<KKJSBridgeModule, KKJSBridgeModuleXMLHttpRequestDelegate>
 
@@ -68,9 +69,14 @@
             if (nativeURL.host) {
                 url = [NSString stringWithFormat:@"%@%@",scheme, url];
             } else {
-                NSString *tmpPath = [url hasPrefix:@"/"] ? url : [NSString stringWithFormat:@"/%@", url];
-                NSString *tmpPort = port.length > 0 ? [NSString stringWithFormat:@":%@", port] : @"";
-                url = [NSString stringWithFormat:@"%@//%@%@%@",scheme, host, tmpPort, tmpPath];
+                if ([url hasPrefix:@"/"]) {// 处理 【/】情况
+                    NSString *tmpPath = url;
+                    NSString *tmpPort = port.length > 0 ? [NSString stringWithFormat:@":%@", port] : @"";
+                    url = [NSString stringWithFormat:@"%@//%@%@%@",scheme, host, tmpPort, tmpPath];
+                } else { // 处理 【./】 【../】 【../../】和前面没有前缀的情况
+                    NSURL *newUrl = [NSURL URLWithString:url relativeToURL:[NSURL URLWithString:href]];
+                    url = newUrl.absoluteString;
+                }
             }
         } else {
             url = href;

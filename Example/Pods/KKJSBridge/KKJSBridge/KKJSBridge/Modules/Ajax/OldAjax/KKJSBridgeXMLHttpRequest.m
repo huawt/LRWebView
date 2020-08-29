@@ -7,12 +7,14 @@
 //
 
 #import "KKJSBridgeXMLHttpRequest.h"
+#import "KKJSBridgeMacro.h"
 #import "KKJSBridgeEngine.h"
 #import "KKJSBridgeJSExecutor.h"
 #import "KKJSBridgeLogger.h"
 #import "KKJSBridgeWeakProxy.h"
 #import "KKJSBridgeAjaxDelegate.h"
 #import "KKJSBridgeURLRequestSerialization.h"
+#import "KKJSBridgeFormDataFile.h"
 
 /**
  https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest
@@ -43,10 +45,6 @@ typedef NS_ENUM(NSInteger, KKJSBridgeXMLHttpRequestStatus) {
 static NSString * const KKJSBridgeXMLHttpRequestStatusTextInit = @"";
 static NSString * const KKJSBridgeXMLHttpRequestStatusTextOK = @"OK";
 
-@implementation KKJSBridgeFormDataFile
-
-@end
-
 @interface KKJSBridgeXMLHttpRequest()<NSURLSessionDelegate, KKJSBridgeAjaxDelegate>
 
 @property (nonatomic, weak) KKJSBridgeEngine *engine;
@@ -64,6 +62,8 @@ static NSString * const KKJSBridgeXMLHttpRequestStatusTextOK = @"OK";
 @property (nonatomic, strong) NSHTTPURLResponse *httpResponse;
 @property (nonatomic, copy) NSString *responseText;
 
+@property (nonatomic, strong) dispatch_semaphore_t lock;
+
 @end
 
 @implementation KKJSBridgeXMLHttpRequest
@@ -74,6 +74,7 @@ static NSString * const KKJSBridgeXMLHttpRequestStatusTextOK = @"OK";
         _engine = engine;
         _webView = engine.webView;
         _state = KKJSBridgeXMLHttpRequestStateUnset;
+        _lock = dispatch_semaphore_create(1);
     }
     
     return self;
@@ -150,9 +151,9 @@ static NSString * const KKJSBridgeXMLHttpRequestStatusTextOK = @"OK";
     
     self.aborted = NO;
     
-    if (self.engine.config.ajaxDelegateManager && [self.engine.config.ajaxDelegateManager respondsToSelector:@selector(dataTaskWithRequest:callbackDelegate:)]) {
+    if (KKJSBridgeConfig.ajaxDelegateManager && [KKJSBridgeConfig.ajaxDelegateManager respondsToSelector:@selector(dataTaskWithRequest:callbackDelegate:)]) {
         // 实际请求代理外部网络库处理
-        self.dataTask = [self.engine.config.ajaxDelegateManager dataTaskWithRequest:self.request callbackDelegate:self];
+        self.dataTask = [KKJSBridgeConfig.ajaxDelegateManager dataTaskWithRequest:self.request callbackDelegate:self];
     } else {
         NSOperationQueue *queue = [NSOperationQueue new];
         NSURLSessionConfiguration *sessionConfiguration = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -181,13 +182,18 @@ static NSString * const KKJSBridgeXMLHttpRequestStatusTextOK = @"OK";
         actualData = data;
     }
     
-    self.request.HTTPBody = actualData;
+    KKJS_LOCK(_lock);
+    if (actualData) {
+        self.request.HTTPBody = actualData;
+    }
+    
     [self send];
+    KKJS_UNLOCK(_lock);
 }
 
 - (void)sendFormData:(NSDictionary *)params withFileDatas:(NSArray<KKJSBridgeFormDataFile *> *)fileDatas {
     KKJSBridgeURLRequestSerialization *serializer = [KKJSBridgeXMLHttpRequest urlRequestSerialization];
-    self.request = [serializer multipartFormRequestWithRequest:self.request parameters:params constructingBodyWithBlock:^(id<KKJSBridgeMultipartFormData>  _Nonnull formData) {
+    [serializer multipartFormRequestWithRequest:self.request parameters:params constructingBodyWithBlock:^(id<KKJSBridgeMultipartFormData>  _Nonnull formData) {
         for (KKJSBridgeFormDataFile *fileData in fileDatas) {
             [formData appendPartWithFileData:fileData.data name:fileData.key fileName:fileData.fileName mimeType:fileData.type];
         }
@@ -300,28 +306,24 @@ static NSString * const KKJSBridgeXMLHttpRequestStatusTextOK = @"OK";
 }
 
 #pragma mark - KKJSBridgeAjaxDelegate - 处理来自外部网络库的数据
-- (void)JSBridgeAjaxInProcessing:(id<KKJSBridgeAjaxDelegate>)ajax {
-    if (ajax == self) {
-        // 处理请求中
-        [self returnReadySate:KKJSBridgeXMLHttpRequestStateLoading];
-    }
+
+- (void)JSBridgeAjax:(id<KKJSBridgeAjaxDelegate>)ajax didReceiveResponse:(NSURLResponse *)response {
+    [self handleReceivedResponse:response];
 }
 
-- (void)JSBridgeAjaxDidCompletion:(id<KKJSBridgeAjaxDelegate>)ajax response:(NSURLResponse *)response responseObject:(id _Nullable)responseObject error:(NSError * _Nullable)error {
-    if (self == ajax) {
-        // 处理响应头
-        [self handleReceivedResponse:response];
-        // 处理响应数据
-        if ([responseObject isKindOfClass:NSData.class]) {
-            [self handleCompletion:responseObject error:error];
-        } else if ([responseObject isKindOfClass:NSDictionary.class]) {
-            NSData *responseData = [NSJSONSerialization dataWithJSONObject:responseObject options:0 error:nil];
-            [self handleCompletion:responseData error:error];
-        } else {
-            NSData *responseData = [NSJSONSerialization dataWithJSONObject:@{} options:0 error:nil];
-            [self handleCompletion:responseData error:error];
-        }
+- (void)JSBridgeAjax:(id<KKJSBridgeAjaxDelegate>)ajax didReceiveData:(NSData *)data {
+    [self.receiveData appendData:data];
+    [self returnReadySate:KKJSBridgeXMLHttpRequestStateLoading];
+}
+
+- (void)JSBridgeAjax:(id<KKJSBridgeAjaxDelegate>)ajax didCompleteWithError:(NSError * _Nullable)error {
+    NSData *data = nil;
+    if (!error && self.receiveData) {
+        data = [self.receiveData copy];
+        // 如果不使用了，可以释放引用，这样会释放些内存
+        self.receiveData = nil;
     }
+    [self handleCompletion:data error:error];
 }
 
 #pragma mark - 统一处理请求头和回来的数据

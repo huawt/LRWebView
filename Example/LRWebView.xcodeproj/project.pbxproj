@@ -347,12 +347,20 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LRWebView_Example/Pods-LRWebView_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/KKJSBridge/KKJSBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/LRTools/LRTools.framework",
 				"${BUILT_PRODUCTS_DIR}/LRWebView/LRWebView.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/TLToastHUD/TLToastHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/TLWaterMark/TLWaterMark.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KKJSBridge.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LRTools.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LRWebView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLToastHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TLWaterMark.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

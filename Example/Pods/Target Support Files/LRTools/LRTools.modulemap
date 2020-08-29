@@ -1,0 +1,6 @@
+framework module LRTools {
+  umbrella header "LRTools-umbrella.h"
+
+  export *
+  module * { export * }
+}

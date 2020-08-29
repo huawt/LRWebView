@@ -1,0 +1,6 @@
+framework module TLToastHUD {
+  umbrella header "TLToastHUD-umbrella.h"
+
+  export *
+  module * { export * }
+}

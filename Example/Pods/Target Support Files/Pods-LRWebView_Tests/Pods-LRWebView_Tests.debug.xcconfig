@@ -1,7 +1,7 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/KKJSBridge" "${PODS_CONFIGURATION_BUILD_DIR}/LRWebView"
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/KKJSBridge" "${PODS_CONFIGURATION_BUILD_DIR}/LRTools" "${PODS_CONFIGURATION_BUILD_DIR}/LRWebView" "${PODS_CONFIGURATION_BUILD_DIR}/Masonry" "${PODS_CONFIGURATION_BUILD_DIR}/TLToastHUD" "${PODS_CONFIGURATION_BUILD_DIR}/TLWaterMark"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/KKJSBridge/KKJSBridge.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/LRWebView/LRWebView.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "KKJSBridge" -framework "LRWebView" -framework "UIKit" -framework "WebKit"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/KKJSBridge/KKJSBridge.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/LRTools/LRTools.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/LRWebView/LRWebView.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/Masonry/Masonry.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/TLToastHUD/TLToastHUD.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/TLWaterMark/TLWaterMark.framework/Headers" $(SDKROOT)/usr/include/
+OTHER_LDFLAGS = $(inherited) -framework "AVFoundation" -framework "AssetsLibrary" -framework "CoreGraphics" -framework "CoreImage" -framework "CoreLocation" -framework "Foundation" -framework "KKJSBridge" -framework "LRTools" -framework "LRWebView" -framework "Masonry" -framework "MobileCoreServices" -framework "Photos" -framework "QuartzCore" -framework "TLToastHUD" -framework "TLWaterMark" -framework "UIKit" -framework "WebKit"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.

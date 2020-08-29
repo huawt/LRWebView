@@ -1,10 +1,10 @@
 
-#import "LRWebView.h"
+#import "LAWebView.h"
 
 /**
- 为 LRWebView 添加网页中图片长按手势
+ 为 BaseWKWebView 添加网页中图片长按手势
  */
-@interface LRWebView (LongPress)<UIGestureRecognizerDelegate>
+@interface LAWebView (LongPress)<UIGestureRecognizerDelegate>
 
 /**
  添加长按手势 - 返回图片的url

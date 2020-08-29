@@ -9,6 +9,7 @@
 #import "KKJSBridgeEngine.h"
 #import "KKJSBridgeMessageDispatcher.h"
 #import "KKJSBridgeModuleXMLHttpRequestDispatcher.h"
+#import "KKJSBridgeXMLBodyCacheRequest.h"
 #import "KKJSBridgeModuleCookie.h"
 #import "KKJSBridgeWeakScriptMessageDelegate.h"
 
@@ -72,6 +73,8 @@ static NSString * const KKJSBridgeMessageName = @"KKJSBridgeMessage";
     
     NSString *bridgeJSString = [[NSString alloc] initWithContentsOfFile:[[NSBundle bundleForClass:self.class] pathForResource:@"KKJSBridge" ofType:@"js"] encoding:NSUTF8StringEncoding error:NULL];
     WKUserScript *userScript = [[WKUserScript alloc] initWithSource:bridgeJSString injectionTime:WKUserScriptInjectionTimeAtDocumentStart forMainFrameOnly:NO];
+    [self.webView.configuration.userContentController removeAllUserScripts];
+    [self.webView.configuration.userContentController removeScriptMessageHandlerForName:KKJSBridgeMessageName];
     [self.webView.configuration.userContentController addUserScript:userScript];
     // 防止内存泄露
     [self.webView.configuration.userContentController addScriptMessageHandler:[[KKJSBridgeWeakScriptMessageDelegate alloc] initWithDelegate:self] name:KKJSBridgeMessageName];
@@ -79,6 +82,7 @@ static NSString * const KKJSBridgeMessageName = @"KKJSBridgeMessage";
 
 - (void)setupDefaultModuleRegister {
     [self.moduleRegister registerModuleClass:KKJSBridgeModuleXMLHttpRequestDispatcher.class];
+//    [self.moduleRegister registerModuleClass:KKJSBridgeXMLBodyCacheRequest.class];
     [self.moduleRegister registerModuleClass:KKJSBridgeModuleCookie.class];
 }
 
