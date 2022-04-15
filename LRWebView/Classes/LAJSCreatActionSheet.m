@@ -1,6 +1,6 @@
 
 #import "LAJSCreatActionSheet.h"
-#import <LRTools/LRTools.h>
+#import "UIViewController+AlertPresented.h"
 
 @implementation LAJSActionSheetMenu
 
@@ -50,7 +50,7 @@
         }
     }];
     
-    UIViewController *controller = [LRTools getCurrentViewController];
+    UIViewController *controller = [UIViewController getCurrentViewController];
     if (!controller.presentedViewController) {
         [controller presentAlertViewController:alertController];
     }else{

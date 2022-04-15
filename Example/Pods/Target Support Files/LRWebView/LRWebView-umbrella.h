@@ -26,7 +26,7 @@
 #import "LAPPWKView.h"
 #import "LAPPWKViewModel.h"
 #import "LAWebView.h"
-#import "LRWebView.h"
+#import "UIViewController+AlertPresented.h"
 #import "WKWebView+LongPress.h"
 
 FOUNDATION_EXPORT double LRWebViewVersionNumber;

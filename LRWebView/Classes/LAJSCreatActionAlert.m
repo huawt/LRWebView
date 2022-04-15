@@ -1,6 +1,6 @@
 
 #import "LAJSCreatActionAlert.h"
-#import <LRTools/LRTools.h>
+#import "UIViewController+AlertPresented.h"
 
 @implementation LAJSCreatActionAlert
 + (void)creatActionAlertWithTitle:(NSString *)title content:(NSString *)content confirmText:(NSString *)confirmText showCancel:(BOOL)showCancel cancelText:(NSString *)cancelText completeBlock:(void (^)(BOOL, BOOL))completeBlock
@@ -37,7 +37,7 @@
         [alertController addAction:cancelAction];
     }
     
-    UIViewController *controller = [LRTools getCurrentViewController];
+    UIViewController *controller = [UIViewController getCurrentViewController];
     if (!controller.presentedViewController) {
         [controller presentAlertViewController:alertController];
     }else{

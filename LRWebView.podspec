@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LRWebView'
-  s.version          = '1.0.3'
+  s.version          = '1.0.4'
   s.summary          = 'LRWebView. dependency KKJSBridge'
   s.homepage         = 'https://github.com/huawt/LRWebView'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -15,9 +15,6 @@ Pod::Spec.new do |s|
   
   s.frameworks = 'UIKit', 'Foundation', 'WebKit', 'CoreLocation', 'CoreGraphics', 'MobileCoreServices', 'AssetsLibrary', 'Photos', 'QuartzCore', 'AVFoundation'
   s.dependency 'Masonry'
-  s.dependency 'TLToastHUD'
   s.dependency 'KKJSBridge'
-  s.dependency 'TLWaterMark'
-  s.dependency 'LRTools'
   
 end

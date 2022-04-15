@@ -3,7 +3,6 @@
 #import "LAPPModules.h"
 #import "LAPPWKView.h"
 #import "LAPPWKDefine.h"
-#import <TLToastHUD/TLToastHUD.h>
 #import <objc/runtime.h>
 #import "LAModuleContext.h"
 
@@ -39,7 +38,6 @@
 - (void)appCopyString:(KKJSBridgeEngine *)engine params:(NSDictionary *)params responseCallback:(void (^)(NSDictionary *))responseCallback{
     NSString *content = [params objectForKey:@"content"];
     [UIPasteboard generalPasteboard].string = content;
-    [TLToast showToast:@"复制成功" duration:1 completion:nil];
 }
 
 - (void)allowWebBackForwardGesture:(KKJSBridgeEngine *)engine params:(NSDictionary *)params responseCallback:(void (^)(NSDictionary *))responseCallback
@@ -56,16 +54,13 @@
     NSNumber *durationNumber = [params objectForKey:@"duration"];
     double duration = durationNumber.doubleValue;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [TLProcessHUD showWithStatus:titleString on:self.context.webView.superview autoDismissDelay:duration completion:^(BOOL success) {
-            responseCallback(@{@"success": @(success)});
-        }];
+
     });
 }
 
 - (void)hideLoading:(KKJSBridgeEngine *)engine params:(NSDictionary *)params responseCallback:(void (^)(NSDictionary *))responseCallback
 {
     dispatch_async(dispatch_get_main_queue(), ^{
-        [TLProcessHUD dismissOn:self.context.webView.superview];
     });
 }
 
@@ -75,9 +70,7 @@
     NSNumber *durationNum = [params objectForKey:@"duration"];
     double duration = durationNum.doubleValue;
     dispatch_async(dispatch_get_main_queue(), ^{
-        [TLToast showToast:content duration:duration completion:^(BOOL success) {
-            responseCallback(@{@"success": @(success)});
-        }];
+
     });
 }
 

@@ -3,11 +3,10 @@
 #import <Masonry/Masonry.h>
 #import "LAPPAlertController.h"
 #import "LAPPWKDefine.h"
-#import <TLToastHUD/TLToastHUD.h>
 #import "WKWebView+LongPress.h"
 #import <KKJSBridge/KKJSBridge.h>
 #import "LAModuleContext.h"
-#import <LRTools/LRTools.h>
+#import "UIViewController+AlertPresented.h"
 
 static NSString *const kWKViewKVOEstimatedProgressPath = @"estimatedProgress";
 
@@ -245,9 +244,6 @@ static NSString *kLAPPKitJSFilePath = @"";
 }
 // 页面开始加载时调用
 - (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
-    if (self.disableLoading == NO) {
-        [TLProcessHUD showWithStatus:kTLProcessHUDDefaultStatus on:self autoDismissDelay:5 completion:nil];
-    }
     if (_viewModel.wkWebViewDidStartProvisionalHandler) {
         _viewModel.wkWebViewDidStartProvisionalHandler(webView, navigation);
     }
@@ -324,10 +320,6 @@ static NSString *kLAPPKitJSFilePath = @"";
 
 -(void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
 {
-    if (self.disableLoading == NO) {
-        [TLProcessHUD dismissAllOn:self];
-    }
-    
     if (webView.title && webView.title.length && _viewModel.setTitleHandler) {
         _viewModel.setTitleHandler(webView.title);
     }
@@ -355,18 +347,12 @@ static NSString *kLAPPKitJSFilePath = @"";
 - (void)webView:(WKWebView *)webView didFailNavigation: (null_unspecified WKNavigation *)navigation withError:(NSError *)error
 {
     NSLog(@"网页加载错误didFailNavigation = %@",error);
-    if (self.disableLoading == NO) {
-        [TLProcessHUD dismissOn:self];
-    }
     if (_viewModel.wkWebViewDidFailHandler) {
         _viewModel.wkWebViewDidFailHandler(webView, navigation, error);
     }
 }
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
       NSLog(@"网页加载错误didFailProvisionalNavigation = %@",error);
-    if (self.disableLoading == NO) {
-        [TLProcessHUD dismissOn:self];
-    }
     if (_viewModel.wkWebViewDidFailHandler) {
         _viewModel.wkWebViewDidFailHandler(webView, navigation, error);
     }
@@ -380,7 +366,7 @@ static NSString *kLAPPKitJSFilePath = @"";
     [alertController addAction:([UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         !completionHandler?:completionHandler();
     }])];
-    [[LRTools getCurrentViewController] presentAlertViewController:alertController];
+    [[UIViewController getCurrentViewController] presentAlertViewController:alertController];
 }
 - (void)webView:(WKWebView *)webView runJavaScriptConfirmPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(BOOL))completionHandler
 {
@@ -392,7 +378,7 @@ static NSString *kLAPPKitJSFilePath = @"";
     [alertController addAction:([UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         !completionHandler?:completionHandler(YES);
     }])];
-    [[LRTools getCurrentViewController] presentAlertViewController:alertController];
+    [[UIViewController getCurrentViewController] presentAlertViewController:alertController];
 }
 - (void)webView:(WKWebView *)webView runJavaScriptTextInputPanelWithPrompt:(NSString *)prompt defaultText:(NSString *)defaultText initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(NSString * _Nullable))completionHandler
 {
@@ -407,7 +393,7 @@ static NSString *kLAPPKitJSFilePath = @"";
         [alertController addAction:([UIAlertAction actionWithTitle:@"完成" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
             !completionHandler?:completionHandler(alertController.textFields[0].text?:@"");
         }])];
-        [[LRTools getCurrentViewController] presentAlertViewController:alertController];
+        [[UIViewController getCurrentViewController] presentAlertViewController:alertController];
     }
 }
 

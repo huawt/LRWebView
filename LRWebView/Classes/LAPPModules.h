@@ -7,7 +7,6 @@
 #import "LAJSCreatActionSheet.h"
 #import "LAJSGetDeviceMessage.h"
 #import "LAJSSetTitle.h"
-#import <TLToastHUD/TLToastHUD.h>
 
 
 #endif /* LAPPModules_h */
