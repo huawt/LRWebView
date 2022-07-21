@@ -37,7 +37,9 @@ static NSString *kLAPPKitJSFilePath = @"";
 
 + (void)prepareWebView {
     // 预先缓存一个 webView
-    [LAWebView configCustomUAWithType:KKWebViewConfigUATypeAppend UAString:[NSString stringWithFormat:@"Linglu/%@", [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]]];
+    NSString *appName = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"];
+    NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    [LAWebView configCustomUAWithType:KKWebViewConfigUATypeAppend UAString:[NSString stringWithFormat:@"%@/%@", appName, version]];
     [[KKWebViewPool sharedInstance] makeWebViewConfiguration:^(WKWebViewConfiguration * _Nonnull configuration) {
         // 必须前置配置，否则会造成属性不生效的问题
         configuration.allowsInlineMediaPlayback = YES;

@@ -6,10 +6,10 @@
 @property (nonatomic, strong, readonly) id effectSetting;
 @end
 
-@interface CustomBlurEffect : UIBlurEffect
+@interface LRCustomBlurEffect : UIBlurEffect
 @end
 
-@implementation CustomBlurEffect
+@implementation LRCustomBlurEffect
 
 + (instancetype)effectWithStyle:(UIBlurEffectStyle)style
 {
@@ -99,10 +99,9 @@
     static UIVisualEffectView *blurView = nil;
     if (add) {
         if (blurView == nil) {
-            UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
+            UIBlurEffect *blurEffect = [LRCustomBlurEffect effectWithStyle:UIBlurEffectStyleExtraLight];
             blurView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
             blurView.frame = self.navigationController.view.bounds;
-            blurView.alpha = 0.8;
         }
         [[self backgroundView] addSubview:blurView];
         [[self backgroundView].layer setShouldRasterize:YES];
