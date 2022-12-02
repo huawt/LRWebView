@@ -70,4 +70,8 @@ JSBridge引擎
  */
 - (void)removeImageLongPressGestureRecognizer;
 
+/**
+ 配置显示进度条
+ */
+- (void)configProgressBarDisplay:(BOOL)show;
 @end

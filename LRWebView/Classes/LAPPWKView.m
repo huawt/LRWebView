@@ -18,6 +18,7 @@ static NSString *kLAPPKitJSFilePath = @"";
 @property (nonatomic, assign) BOOL debugMode;
 @property (nonatomic, strong) WKUserScript *noneSelectScript;
 @property (nonatomic, strong) WKUserScript *AppCore;
+@property (nonatomic, assign) BOOL showProgressBar;
 
 /**
 主 View
@@ -182,13 +183,17 @@ static NSString *kLAPPKitJSFilePath = @"";
     _webView.longpressEnable = NO;
 }
 
+- (void)configProgressBarDisplay:(BOOL)show {
+    self.showProgressBar = show;
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:kWKViewKVOEstimatedProgressPath]) {
         self.progress.progress = _webView.estimatedProgress;
     }
     
-    if (object == _webView && [keyPath isEqualToString:kWKViewKVOEstimatedProgressPath]) {
+    if (object == _webView && [keyPath isEqualToString:kWKViewKVOEstimatedProgressPath] && self.showProgressBar == YES) {
         CGFloat newprogress = [[change objectForKey:NSKeyValueChangeNewKey] doubleValue];
         if (newprogress == 1) {
             self.progress.hidden = YES;
@@ -197,6 +202,8 @@ static NSString *kLAPPKitJSFilePath = @"";
             self.progress.hidden = NO;
             [self.progress setProgress:newprogress animated:YES];
         }
+    } else {
+        self.progress.hidden = YES;
     }
 }
 
