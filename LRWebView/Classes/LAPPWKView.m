@@ -322,6 +322,7 @@ static NSString *kLAPPKitJSFilePath = @"";
     if(!_noneSelectScript){
         NSMutableString *javascript = [NSMutableString string];
         [javascript appendString:@"document.documentElement.style.webkitTouchCallout='none';"];//禁止长按
+        [javascript appendString:@"document.documentElement.style.webkitUserSelect='none';"];//禁止选择
         _noneSelectScript = [[WKUserScript alloc] initWithSource:javascript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
     }
     return _noneSelectScript;
